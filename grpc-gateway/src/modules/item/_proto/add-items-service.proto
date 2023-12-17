@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package additemsservice;
+
+message AddItemRequest {
+  string name = 1;
+  int32 price = 2;
+}
+
+message ItemResponse {
+  int32 id = 1;
+  string name = 2;
+  int32 price = 3;
+}
+
+service AddItemService {
+  rpc AddItem(AddItemRequest) returns (ItemResponse);
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package returnitemsservice;
+
+message Item {
+  int32 id = 1;
+  string name = 2;
+  int32 price = 3;
+}
+
+message ItemsResponse {
+  repeated Item items = 1;
+}
+
+message Empty {
+  int32 arg = 0;
+}
+
+service ReturnItemsService {
+  rpc GetItems (Empty) returns (ItemsResponse);
+}
